@@ -44,7 +44,7 @@ class Program
             string paletteFilter;
             if (doInterpolate)
             {
-                // interpolate to a higher fps for smoother motion (heavy CPU & large size)
+             
                 int interpFps = fps * 2; // e.g. 25 -> 50
                 paletteFilter = $"minterpolate='mi_mode=mci:mc_mode=aobmc:vsbmc=1:fps={interpFps}',scale={width}:-1:flags=lanczos,palettegen=stats_mode=full:max_colors=256";
             }
@@ -93,42 +93,42 @@ class Program
         return trim;
     }
 
-    static Task RunProcessAsync(string exe, string arguments)
-    {
-        var tcs = new TaskCompletionSource<object?>();
-        var psi = new ProcessStartInfo
-        {
-            FileName = exe,
-            Arguments = arguments,
-            UseShellExecute = false,
-            RedirectStandardError = true,
-            RedirectStandardOutput = true,
-            CreateNoWindow = true
-        };
+//     static Task RunProcessAsync(string exe, string arguments)
+//     {
+//         var tcs = new TaskCompletionSource<object?>();
+//         var psi = new ProcessStartInfo
+//         {
+//             FileName = exe,
+//             Arguments = arguments,
+//             UseShellExecute = false,
+//             RedirectStandardError = true,
+//             RedirectStandardOutput = true,
+//             CreateNoWindow = true
+//         };
 
-        var proc = new Process { StartInfo = psi, EnableRaisingEvents = true };
+//         var proc = new Process { StartInfo = psi, EnableRaisingEvents = true };
 
-        proc.OutputDataReceived += (s, e) => { if (!string.IsNullOrEmpty(e.Data)) Console.WriteLine(e.Data); };
-        proc.ErrorDataReceived  += (s, e) => { if (!string.IsNullOrEmpty(e.Data)) Console.Error.WriteLine(e.Data); };
+//         proc.OutputDataReceived += (s, e) => { if (!string.IsNullOrEmpty(e.Data)) Console.WriteLine(e.Data); };
+//         proc.ErrorDataReceived  += (s, e) => { if (!string.IsNullOrEmpty(e.Data)) Console.Error.WriteLine(e.Data); };
 
-        proc.Exited += (s, e) =>
-        {
-            if (proc.ExitCode == 0) tcs.TrySetResult(null);
-            else tcs.TrySetException(new Exception($"Process exited with code {proc.ExitCode}"));
-            proc.Dispose();
-        };
+//         proc.Exited += (s, e) =>
+//         {
+//             if (proc.ExitCode == 0) tcs.TrySetResult(null);
+//             else tcs.TrySetException(new Exception($"Process exited with code {proc.ExitCode}"));
+//             proc.Dispose();
+//         };
 
-        try
-        {
-            if (!proc.Start()) throw new Exception("Failed to start process: " + exe);
-            proc.BeginOutputReadLine();
-            proc.BeginErrorReadLine();
-        }
-        catch (Exception ex)
-        {
-            tcs.TrySetException(ex);
-        }
+//         try
+//         {
+//             if (!proc.Start()) throw new Exception("Failed to start process: " + exe);
+//             proc.BeginOutputReadLine();
+//             proc.BeginErrorReadLine();
+//         }
+//         catch (Exception ex)
+//         {
+//             tcs.TrySetException(ex);
+//         }
 
-        return tcs.Task;
-    }
-}
+//         return tcs.Task;
+//     }
+// }
