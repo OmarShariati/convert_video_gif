@@ -1,0 +1,14 @@
+E:\DotNet Programs\GifConverter\bin\Debug\net8.0\GifConverter.exe
+E:\DotNet Programs\GifConverter\bin\Debug\net8.0\GifConverter.deps.json
+E:\DotNet Programs\GifConverter\bin\Debug\net8.0\GifConverter.runtimeconfig.json
+E:\DotNet Programs\GifConverter\bin\Debug\net8.0\GifConverter.dll
+E:\DotNet Programs\GifConverter\bin\Debug\net8.0\GifConverter.pdb
+E:\DotNet Programs\GifConverter\obj\Debug\net8.0\GifConverter.GeneratedMSBuildEditorConfig.editorconfig
+E:\DotNet Programs\GifConverter\obj\Debug\net8.0\GifConverter.AssemblyInfoInputs.cache
+E:\DotNet Programs\GifConverter\obj\Debug\net8.0\GifConverter.AssemblyInfo.cs
+E:\DotNet Programs\GifConverter\obj\Debug\net8.0\GifConverter.csproj.CoreCompileInputs.cache
+E:\DotNet Programs\GifConverter\obj\Debug\net8.0\GifConverter.dll
+E:\DotNet Programs\GifConverter\obj\Debug\net8.0\refint\GifConverter.dll
+E:\DotNet Programs\GifConverter\obj\Debug\net8.0\GifConverter.pdb
+E:\DotNet Programs\GifConverter\obj\Debug\net8.0\GifConverter.genruntimeconfig.cache
+E:\DotNet Programs\GifConverter\obj\Debug\net8.0\ref\GifConverter.dll
